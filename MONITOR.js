@@ -1,5 +1,5 @@
-var socket = io.connect( 'http://localhost:4000' );
-// var socket = io.connect( 'http://167.99.168.1:4000' );
+// var socket = io.connect( 'http://localhost:4000' );
+var socket = io.connect( 'http://167.99.168.1:4000' );
 
 socket.emit( 'join', {
   foo: 'foo'

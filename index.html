@@ -18,15 +18,32 @@
   <!-- <button class="js-chatBtn">Chat</button> -->
   
   <div class="connections">
-    <span class="js-time">
-      0
-    </span>
-    <span class="js-connect">
-      0
-    </span>
+    <dt>
+      <dt class="label">
+        Connections
+      </dt>
+      <dd class="js-connect">
+        0
+      </dd>
+      <dt class="label">
+        Time (ticks)
+      </dt>
+      <dd class="js-time">
+        0
+      </dd>
+      <dt class="label">
+        Offset (ms)
+      </dt>
+      <dd class="js-offset">
+        0
+      </dd>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.2/socket.io.slim.js"></script>
+  <!-- <script src="node_modules/socket-ntp/client/socket.io.min.js"></script> -->
+  
+  <script src="node_modules/socket-ntp/client/ntp.js"></script>
+  
   <script src="test.js"></script>
 
 </body>

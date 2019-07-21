@@ -1,0 +1,29 @@
+{
+  "name": "@punksnotdev/monitor",
+  "version": "0.0.1",
+  "description": "RT monitor for RTSYNC",
+  "main": "MONITOR.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/punksnotdev/MONITOR.git"
+  },
+  "keywords": [
+    "real",
+    "time",
+    "dashboard",
+    "live",
+    "coding"
+  ],
+  "author": "furenku",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/punksnotdev/MONITOR/issues"
+  },
+  "homepage": "https://github.com/punksnotdev/MONITOR#readme",
+  "dependencies": {
+    "socket-ntp": "^0.1.0"
+  }
+}

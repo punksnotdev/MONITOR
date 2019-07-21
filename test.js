@@ -5,6 +5,11 @@ socket.emit( 'join', {
 });
 
 
+ntp.init(socket);  
+
+
+
+
 
 // var ack = document.querySelector( '.js-ack' );
 // ack.addEventListener( 'click', function( event ) {
@@ -15,26 +20,39 @@ socket.emit( 'join', {
 //   });
 // });
 var connections = document.querySelector( '.js-connect' );
+var offset = document.querySelector( '.js-offset' );
+var time = document.querySelector('.js-time')
 
 
-console.log(connections);
 
 socket.on( 'join', function( event ) {
   connections.innerHTML = event.numConnections;
 });
 
-var time = document.querySelector('.js-time')
+var displayOffset = false;
 
 socket.on( 'sync', function( event ) {
+  
+  
   time.innerHTML = event.time;
+  
+  if(!displayOffset) {
+    
+    displayOffset = setTimeout(()=>{
+      var offsetMs = ntp.offset(); // time offset from the server in ms 
+      offset.innerHTML = parseInt(offsetMs*10)/10;
+      displayOffset=false
+    },100)
+
+  }
+  
 });
 socket.on( 'connections', function( event ) {
   connections.innerHTML = event.numConnections;
 });
-socket.on( 'msg', function( event ) {
-  console.log( 'msg', event );
-  connections.innerHTML = event.numConnections;
-});
+// socket.on( 'msg', function( event ) {
+//   console.log( 'msg', event );
+// });
 // socket.on( 'response', function( event ) {
 //   console.log( 'response:', event.message );
 // });
